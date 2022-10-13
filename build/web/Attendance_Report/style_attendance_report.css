@@ -1,0 +1,6 @@
+.report tr th {
+    border: solid black 1px;
+}
+.report tr td {
+    border: solid black 1px;
+}

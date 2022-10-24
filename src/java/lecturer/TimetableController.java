@@ -34,7 +34,7 @@ public class TimetableController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected static void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         int lid = Integer.parseInt(request.getParameter("lid"));
         String raw_from = request.getParameter("from");
@@ -63,22 +63,15 @@ public class TimetableController extends HttpServlet {
         TimeSlotDBContext slotDB = new TimeSlotDBContext();
         ArrayList<TimeSlot> slots = slotDB.list();
         request.setAttribute("slots", slots);
-        
         SessionDBContext sesDB = new SessionDBContext();
         ArrayList<Session> sessions = sesDB.filter(lid, from, to);
         request.setAttribute("sessions", sessions);
-        
-        response.getWriter().print(sessions.size());
-        response.getWriter().print(lid);
-        response.getWriter().print(from);
-        response.getWriter().print(to);
-        
         
         LecturerDBContext lecDB = new LecturerDBContext();
         Lecturer lecturer = lecDB.get(lid);
         request.setAttribute("lecturer", lecturer);
         
-        request.getRequestDispatcher("../Schedule/timetable.jsp").forward(request, response);
+        request.getRequestDispatcher("../Schedule/scheduler.jsp").forward(request, response);
         
     } 
 

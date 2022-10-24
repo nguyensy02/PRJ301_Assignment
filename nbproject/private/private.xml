@@ -3,9 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/index.html</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Schedule/style-scheduler.css</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Schedule/Scheduler.html</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Lecturer.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Attandance.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Group.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/lecturer/ChangeAttendController.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance/change_attendance.html</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/SessionDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance/attandance.jsp</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Session.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/StudentDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Student.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/AttendanceDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/GroupDBContext.java</file>
         </group>
     </open-files>
 </project-private>

@@ -13,9 +13,8 @@ import java.util.ArrayList;
  */
 public class Student {
     private int id;
-    private String firstName;
-    private String lastName;
     private Date dob;
+    private String name;
     private boolean gender;
     private ArrayList<Group> groups;
     private ArrayList<Account> account;
@@ -24,15 +23,22 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String firstName, String lastName, Date dob, boolean gender, ArrayList<Group> groups, ArrayList<Account> account, ArrayList<Attandance> attandances) {
+    public Student(int id,String name, Date dob, boolean gender, ArrayList<Group> groups, ArrayList<Account> account, ArrayList<Attandance> attandances) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.dob = dob;
         this.gender = gender;
         this.groups = groups;
         this.account = account;
         this.attandances = attandances;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -43,21 +49,6 @@ public class Student {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public Date getDob() {
         return dob;

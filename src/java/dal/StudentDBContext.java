@@ -4,14 +4,24 @@
  */
 package dal;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Attandance;
+import model.Group;
+import model.Lecturer;
+import model.Session;
 import model.Student;
+import model.Subject;
 
 /**
  *
  * @author nguye
  */
-public class StudentDBContext extends DBContext<Student>{
+public class StudentDBContext extends DBContext<Student> {
 
     @Override
     public void insert(Student model) {
@@ -37,5 +47,5 @@ public class StudentDBContext extends DBContext<Student>{
     public ArrayList<Student> list() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }

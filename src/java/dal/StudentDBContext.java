@@ -23,6 +23,28 @@ import model.Subject;
  */
 public class StudentDBContext extends DBContext<Student> {
 
+    public ArrayList<Student> getBySesid(int sesid) {
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            String sql = "select s.id as sid, s.[name] as sname, ses.id as sesid from Student s\n"
+                    + "join Attendance a on a.studentId=s.id\n"
+                    + "join [Session] ses on a.sessionId=ses.id\n"
+                    + "where ses.id=?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, sesid);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+                s.setId(rs.getInt("sid"));
+                s.setName(rs.getString("sname"));
+                students.add(s);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return students;
+    }
+
     public ArrayList<Student> getByGid(int gid) {
         ArrayList<Student> students = new ArrayList<>();
         try {

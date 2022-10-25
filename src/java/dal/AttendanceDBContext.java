@@ -36,16 +36,16 @@ public class AttendanceDBContext extends DBContext<Attandance> {
                 Student s = new Student();
                 s.setId(rs.getInt("stuid"));
                 s.setName(rs.getString("sname"));
-                
+
                 Session ses = new Session();
                 ses.setIndex(rs.getInt("index"));
-                
+
                 Attandance a = new Attandance();
                 a.setSession(ses);
                 a.setStudent(s);
                 a.setDescription(rs.getString("comment"));
                 a.setPresent(rs.getBoolean("attend"));
-                
+
                 attandances.add(a);
             }
         } catch (SQLException e) {
@@ -73,8 +73,10 @@ public class AttendanceDBContext extends DBContext<Attandance> {
                 attandance.setId(sesid);
                 attandance.setDescription(rs.getString("comment"));
                 attandance.setPresent(rs.getBoolean("attend"));
+
                 student.setId(rs.getInt("studentId"));
                 student.setName(rs.getString("stuname"));
+
                 attandance.setStudent(student);
 
                 attandances.add(attandance);
@@ -93,7 +95,19 @@ public class AttendanceDBContext extends DBContext<Attandance> {
 
     @Override
     public void update(Attandance model) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try {
+            String sql = "update Attendance \n"
+                    + "set [attend] = ?\n"
+                    + "where sessionId = ?\n"
+                    + "and studentId = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setBoolean(1, model.isPresent());
+            stm.setInt(2, model.getSession().getId());
+            stm.setInt(3, model.getStudent().getId());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

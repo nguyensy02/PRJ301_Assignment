@@ -94,7 +94,7 @@
                                                 <p>x</p>
                                             </c:if>
                                             <c:if test="${!a.present}"> 
-                                                <p>o</p>
+                                                <p></p>
                                             </c:if>
                                         </c:if>
                                     </c:forEach>

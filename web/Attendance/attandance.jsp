@@ -26,39 +26,42 @@
                 </div>
             </div>
             <p> Attendance of ${requestScope.group.subject.name}-${requestScope.group.name}</p>
-            <table>
-                <thead>
-                    <tr>
-                        <td>INDEX</td>
-                        <td>NAME</td>
-                        <td>CODE</td>
-                        <td>ATTENDANCE</td>
-                        <td>COMMENT</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach items="${requestScope.attandances}" var="a">
+            <form action="att" method="post">
+                <input type="hidden" name="lid" value="${requestScope.group.supervisor.id}"/>
+                <input type="hidden" name="sesid" value="${requestScope.sesid}"/>
+                <table>
+                    <thead>
                         <tr>
-                            <td>${a.student.id}</td>
-                            <td>${a.student.name}</td>
-                            <td></td>
-                            <td>
-                                <form action="" method="get">
+                            <td>INDEX</td>
+                            <td>NAME</td>
+                            <td>CODE</td>
+                            <td>ATTENDANCE</td>
+                            <td>COMMENT</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${requestScope.attandances}" var="a">
+                            <tr>
+                                <td>${a.student.id}</td>
+                                <td>${a.student.name}</td>
+                                <td></td>
+                                <td>
                                     <c:if test="${!a.present}">
-                                        <input type="radio" name="attend" value="present">present
-                                        <input type="radio" name="attend" value="absent" checked="checked">absent
+                                        <input type="radio" name="${a.student.id}" value="present">present
+                                        <input type="radio" name="${a.student.id}" value="absent" checked="checked">absent
                                     </c:if>
                                     <c:if test="${a.present}">
-                                        <input type="radio" name="attend" value="present" checked="checked">present
-                                        <input type="radio" name="attend" value="absent" >absent
+                                        <input type="radio" name="${a.student.id}" value="present" checked="checked">present
+                                        <input type="radio" name="${a.student.id}" value="absent" >absent
                                     </c:if>
-                                </form>
-                            </td>
-                            <td>${a.description}</td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+                                </td>
+                                <td>${a.description}</td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+                <input type="submit" value="Save">
+            </form>
         </div>
     </body>
 </html>

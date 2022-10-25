@@ -24,6 +24,26 @@ import model.TimeSlot;
  */
 public class SessionDBContext extends dal.DBContext<Session> {
 
+    public ArrayList<Session> getByGroup(int gid) {
+        ArrayList<Session> sessions = new ArrayList<>();
+        try {
+            String sql = "select ses.[index] as sesindex from [Session] ses \n"
+                    + "join [Group] g on ses.groupId=g.id\n"
+                    + "where g.id=?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, gid);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Session ses = new Session();
+                ses.setIndex(rs.getInt("sesindex"));
+                sessions.add(ses);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return sessions;
+    }
+
     public ArrayList<Session> filter(int lid, Date from, Date to) {
         ArrayList<Session> sessions = new ArrayList<>();
         try {
@@ -35,11 +55,11 @@ public class SessionDBContext extends dal.DBContext<Session> {
                     + "	r.id as rid, r.name as rname,\n"
                     + "	t.id as tid, t.description\n"
                     + "from [Session] ses\n"
-                        + "join Lecture l on ses.lid = l.id\n"
-                        + "join [Group] g on g.id = ses.groupId\n"
-                        + "join [Subject] sub on sub.id = g.subjectCode\n"
-                        + "join Room r on r.id = ses.roomId\n"
-                        + "join TimeSlot t on t.id = ses.timeSlotId\n"
+                    + "join Lecture l on ses.lid = l.id\n"
+                    + "join [Group] g on g.id = ses.groupId\n"
+                    + "join [Subject] sub on sub.id = g.subjectCode\n"
+                    + "join Room r on r.id = ses.roomId\n"
+                    + "join TimeSlot t on t.id = ses.timeSlotId\n"
                     + "where l.id = ? \n"
                     + "	and ses.date >= ?\n"
                     + "	and ses.date <=?";

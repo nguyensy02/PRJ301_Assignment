@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import model.Attandance;
 import model.Group;
+import model.Session;
 
 /**
  *

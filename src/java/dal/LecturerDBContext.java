@@ -36,7 +36,7 @@ public class LecturerDBContext extends dal.DBContext<Lecturer> {
     @Override
     public Lecturer get(int id) {
         try {
-            String sql = "select id as lid, name from Lecture where id = ?";
+            String sql = "select id as lid, lname from Lecture where id = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
@@ -44,7 +44,7 @@ public class LecturerDBContext extends dal.DBContext<Lecturer> {
             {
                 Lecturer l = new Lecturer();
                 l.setId(rs.getInt("lid"));
-                l.setName(rs.getString("name"));
+                l.setName(rs.getString("lname"));
                 return l;
             }
         } catch (SQLException ex) {

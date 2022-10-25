@@ -14,12 +14,43 @@ import java.util.logging.Logger;
 import model.Group;
 import model.Lecturer;
 import model.Subject;
+import model.TimeSlot;
 
 /**
  *
  * @author nguye
  */
 public class GroupDBContext extends DBContext<GroupDBContext> {
+
+    public ArrayList<Group> getGroups(int lid) {
+        ArrayList<Group> groups = new ArrayList<>();
+        try {
+            String sql = "select g.id as gid, g.class, sub.id as subid, sub.[name] as subname from [Group] g\n"
+                    + "join Lecture l on g.lectureId = l.id \n"
+                    + "join [Subject] sub on g.subjectCode=sub.id\n"
+                    + "where l.id = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, lid);
+            ResultSet rs = stm.executeQuery();
+
+            while (rs.next()) {
+                Group g = new Group();
+                g.setId(rs.getInt("gid"));
+                g.setName(rs.getString("class"));
+
+                Subject sub = new Subject();
+                sub.setId(rs.getInt("subid"));
+                sub.setName(rs.getString("subname"));
+
+                g.setSubject(sub);
+                groups.add(g);
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return groups;
+    }
 
     public Group getGroup(int sesId) {
         Group g = new Group();

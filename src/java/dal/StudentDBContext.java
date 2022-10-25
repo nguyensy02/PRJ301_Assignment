@@ -23,6 +23,28 @@ import model.Subject;
  */
 public class StudentDBContext extends DBContext<Student> {
 
+    public ArrayList<Student> getByGid(int gid) {
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            String sql = "select s.id as [sid], s.[name] as sname from [Student] s\n"
+                    + "join Student_Group sg on s.id=sg.studentId\n"
+                    + "join [Group] g on sg.groupId=g.id\n"
+                    + "where g.id =?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, gid);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Student s = new Student();
+                s.setId(rs.getInt("sid"));
+                s.setName(rs.getString("sname"));
+                students.add(s);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return students;
+    }
+
     @Override
     public void insert(Student model) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

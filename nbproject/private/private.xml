@@ -5,26 +5,32 @@
         <group>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Lecturer.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/LecturerDBContext.java</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/TimeSlot.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/TimeSlotDBContext.java</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Attandance.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Group.java</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/lecturer/ChangeAttendController.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance/change_attendance.html</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/SessionDBContext.java</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Schedule/scheduler.jsp</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance_Report/style_attendance_report.css</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Role.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance/attandance.jsp</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance_Report/Attendance_Report.jsp</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/lecturer/AttendanceReportController.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/controller/auth/BaseRoleController.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/view/home.jsp</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Session.java</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance_Report/Attendance_Report.html</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Account.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/lecturer/TimetableController.java</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/StudentDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/controller/home/HomeController.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Student.java</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Schedule/Scheduler.html</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/AttendanceDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/StudentDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance_Report/report.jsp</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/DBContext.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/GroupDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/AttendanceDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/controller/auth/LoginController.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Attandance.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Schedule/timetable.jsp</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/lecturer/ChangeAttendController.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/SessionDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/AccountDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

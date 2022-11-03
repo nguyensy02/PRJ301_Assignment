@@ -16,6 +16,16 @@ public class Account {
     private String displayname;
     private ArrayList<Lecturer> lectures;
     private ArrayList<Student> students;
+    
+    private ArrayList<Role> roles = new ArrayList<>();
+
+    public ArrayList<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(ArrayList<Role> roles) {
+        this.roles = roles;
+    }
 
     public Account(String username, String password, String displayname, ArrayList<Lecturer> lectures, ArrayList<Student> students) {
         this.username = username;
@@ -67,6 +77,9 @@ public class Account {
     public void setStudents(ArrayList<Student> students) {
         this.students = students;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Account{" + "username=" + username + ", password=" + password + ", displayname=" + displayname + ", lectures=" + lectures + ", students=" + students + ", roles=" + roles + '}';
+    }
 }

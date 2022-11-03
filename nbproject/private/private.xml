@@ -6,8 +6,10 @@
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Lecturer.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/LecturerDBContext.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/TimeSlotDBContext.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/listener/ServletContextEvent.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Group.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance/change_attendance.html</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/filter/LogFilter.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance_Report/style_attendance_report.css</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Role.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance/attandance.jsp</file>
@@ -18,6 +20,7 @@
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Account.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/lecturer/TimetableController.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/controller/home/HomeController.java</file>
+            <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/META-INF/context.xml</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/model/Student.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/src/java/dal/StudentDBContext.java</file>
             <file>file:/C:/Users/nguye/Desktop/PRJ/PRJ_Assignment/PRJ301_Assignment/web/Attendance_Report/report.jsp</file>

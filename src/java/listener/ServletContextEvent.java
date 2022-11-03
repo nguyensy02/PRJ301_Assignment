@@ -14,11 +14,12 @@ public class ServletContextEvent implements ServletContextListener{
 
     @Override
     public void contextInitialized(jakarta.servlet.ServletContextEvent sce) {
-        System.out.println("Ok");
+        System.out.println("Bat web");
     }
 
     @Override
     public void contextDestroyed(jakarta.servlet.ServletContextEvent sce) {
+        System.out.println("Tat web");
     }
     
 }

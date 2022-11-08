@@ -58,7 +58,7 @@
                 <input type="hidden" name="lid" value="${requestScope.group.supervisor.id}"/>
                 <input type="hidden" name="sesid" value="${requestScope.sesid}"/>
                 <table class="attandance">
-                    <thead>
+                    <thead style="background-color: #007bff">
                         <tr>
                             <td>ID</td>
                             <td>NAME</td>

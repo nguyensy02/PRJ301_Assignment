@@ -56,22 +56,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="detail">
-                    <p style="font-size: 40px;">Activities for SyNTHE160686 (Nguyễn Tiến Sỹ)</p><br>
-                    <p><b>Note:</b> These activities do not include extra-curriculum activities, such as club activities ...
-                    </p>
-                    <p><b>Chú thích:</b> Các hoạt động trong bảng dưới không bao gồm hoạt động ngoại khóa, ví dụ như hoạt
-                        động câu lạc
-                        bộ ...</p>
-                    <div class="note">
-                        <p>Các phòng bắt đầu bằng AL thuộc tòa nhà Alpha. VD: AL...</p>
-                        <p>Các phòng bắt đầu bằng BE thuộc tòa nhà Beta. VD: BE,..</p>
-                        <p>Các phòng bắt đầu bằng G thuộc tòa nhà Gamma. VD: G201,...</p>
-                        <p>Các phòng tập bằng đầu bằng R thuộc khu vực sân tập Vovinam.</p>
-                        <p>Các phòng bắt đầu bằng DE thuộc tòa nhà Delta. VD: DE,..</p>
-                        <p>Little UK (LUK) thuộc tầng 5 tòa nhà Delta</p>
-                    </div>
-                </div>
                 <form action="timetable" method="GET">
                     Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
                     <input type="hidden" name="lid" value="${param.lid}"/>
@@ -81,7 +65,7 @@
                 </form>
                 <table class="report">
 
-                    <tr>
+                    <tr style="background-color: #007bff">
                         <td> </td>
                         <c:forEach items="${requestScope.dates}" var="d">
                             <td>${d}<br/>${helper.getDayNameofWeek(d)}</td>
@@ -99,10 +83,10 @@
                                             <br/>
                                             ${ses.room.name}
                                             <c:if test="${ses.attandated}">
-                                                <img src="../img/male-icon.png" alt=""/>
+                                                <font color="Green">attended</font>
                                             </c:if>
                                             <c:if test="${!ses.attandated}">
-                                                <img src="../img/female-icon.png" alt=""/>
+                                                <font color="Red">absent</font>
                                             </c:if>
                                         </c:if>
 
@@ -112,242 +96,6 @@
                         </tr>
                     </c:forEach>
                 </table>
-                <!--                <table style="border: 1px solid black;">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <span>YEAR</span>
-                                                <select name="years" id="">
-                                                    <option value="2019">2019</option>
-                                                    <option value="2020">2020</option>
-                                                    <option value="2021">2021</option>
-                                                    <option value="2022">2022</option>
-                                                </select>
-                                            </th>
-                                            <th>Mon</th>
-                                            <th>Tue</th>
-                                            <th>Wed</th>
-                                            <th>Thu</th>
-                                            <th>Fri</th>
-                                            <th>Sat</th>
-                                            <th>Sun</th>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <span>WEEK</span>
-                                                <select name="weeks" id="">
-                                                    <option value="10/10 to 16/10">10/10 to 16/10</option>
-                                                </select>
-                                            </th>
-                                            <th>10/10</th>
-                                            <th>11/10</th>
-                                            <th>12/10</th>
-                                            <th>13/10</th>
-                                            <th>14/10</th>
-                                            <th>15/10</th>
-                                            <th>16/10</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                
-                                    </tbody>
-                                    <tr>
-                                        <td>Slot 0</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 1</td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1033648">IOT102-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>-</td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1033648">IOT102-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>-</td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1033648">IOT102-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 2</td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1025955">PRJ301-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>-</td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1025955">PRJ301-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1029091">JPD123-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1025955">PRJ301-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 3</td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1022669">MAS291-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1029091">JPD123-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1022669">MAS291-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1029091">JPD123-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p><a href="https://fap.fpt.edu.vn/Schedule/ActivityDetail.aspx?id=1022669">MAS291-</a><a
-                                                    class="label label-warning"
-                                                    href="http://flm.fpt.edu.vn/gui/role/guest/ListScheduleSyllabus?subjectCode=GTJiuwxGNDd1MUm4wrFEDA%3d%3d&amp;SessionNo=kIpDEdUxtpjrvnJByUa6DA%3d%3d"
-                                                    target="_blank">View Materials</a><br> at DE-C205 <a>
-                                                    <br>(<font color="Green">attended</font>)<br><span
-                                                        class="label label-success">(9:10-10:40)</span><br></a>
-                                            </p>
-                                        </td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 4</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 5</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 6</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 7</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Slot 8</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                </table>
-                <div class="Morenote">
-                    <p><b>More note / Chú thích thêm:</b></p>
-                    <ul>
-                        <li>(<font color="Green">attended</font>): SyNTHE160686 had attended this activity / Nguyễn Tiến Sỹ
-                            đã tham gia hoạt động này</li>
-                        <li>(<font color="Red">absent</font>): SyNTHE160686 had NOT attended this activity / Nguyễn Tiến Sỹ
-                            đã vắng mặt buổi này</li>
-                        <li>(-): no data was given / chưa có dữ liệu</li>
-                    </ul>
-                </div>
             </div>
             <div class="row" style="text-align: center;">
                 <div class="col-md-12">

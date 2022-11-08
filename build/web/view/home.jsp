@@ -14,7 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <ex:Hello/>
+        <%--<ex:Hello/>--%>
         <c:if test="${sessionScope.account ne null}">
             Hello ${sessionScope.account.displayname},  click 
             <a href="logout">here</a> 
@@ -26,7 +26,8 @@
             <a href="lecturer/report?lid=${sessionScope.lecturer.id}">View report of ${sessionScope.lecturer.name}</a>
         </c:if>
         <c:if test="${sessionScope.account eq null}">
-            you are not logged in yet!
+            You are not logged in yet!
+            Click <a href="login">here</a> to login
         </c:if>
     </body>
 </html>

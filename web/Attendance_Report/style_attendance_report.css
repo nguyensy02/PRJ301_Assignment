@@ -12,14 +12,14 @@
 }
 
 .report {
-    display: inline-block;
-    width: 90%;
-    height: auto;
+    display: inline-table;
+    width: 85%;
+    height: 1000px;
 }
 .total {
     display: inline-table;
     width: 10%;
-    height: auto;
+    height: 1000px;
 }
 
 table thead {

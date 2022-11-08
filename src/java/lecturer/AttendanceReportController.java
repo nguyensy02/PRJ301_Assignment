@@ -111,7 +111,7 @@ public class AttendanceReportController extends BaseRoleController {
                 for (int k = 0; k<numAtt; k++) {
                     if (attandances.get(k).getStudent().getId()== students.get(i).getId()
                             &&attandances.get(k).getSession().getIndex()==sessions.get(j).getIndex()
-                            && attandances.get(k).isPresent()) {
+                            && !attandances.get(k).isPresent()) {
                         total++;
                     }
                 }

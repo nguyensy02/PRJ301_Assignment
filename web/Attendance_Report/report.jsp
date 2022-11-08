@@ -70,14 +70,11 @@
             </form>
 
             <table class="report">
-                <thead>
+                <thead style="background-color: #007bff">
                     <tr>
-                        <th rowspan="2">ID</th>
-                        <th rowspan="2">Name</th>
-                        <th colspan="${requestScope.numSes}" style="text-align: center;">Slot</th>
-                    </tr>
-                    <tr>
-                        <c:forEach items="${requestScope.sessions}" var="ses">
+                        <th>ID</th>
+                        <th>Name</th>
+                            <c:forEach items="${requestScope.sessions}" var="ses">
                             <th>${ses.index}</th>
                             </c:forEach>
                     </tr>
@@ -92,10 +89,9 @@
                                     <c:forEach items="${requestScope.attendances}" var="a">
                                         <c:if test="${(a.student.id eq s.id) and (a.session.index eq ses.index)}">
                                             <c:if test="${a.present}"> 
-                                                <p>x</p>
+                                                x
                                             </c:if>
                                             <c:if test="${!a.present}"> 
-                                                <p></p>
                                             </c:if>
                                         </c:if>
                                     </c:forEach>
@@ -105,17 +101,22 @@
                     </c:forEach>
                 </tbody>
             </table>
-                    
+
             <table class="total">
-                <thead>
+                <thead style="background-color: #007bff">
                     <tr>
-                        <td rowspan="2">Total</td>
+                        <th>% Absent</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach items="${requestScope.totals}" var="total">
                         <tr>
-                            <td>${total}</td>
+                            <c:if test="${total > 20}">
+                                <td style="background-color: red">${total}%</td>
+                            </c:if>
+                            <c:if test="${total<=20}">
+                                <td style="background-color: green">${total}%</td>
+                            </c:if>
                         </tr>
                     </c:forEach>
                 </tbody>

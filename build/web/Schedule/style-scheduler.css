@@ -9,3 +9,6 @@ tr {
 td {
     border: 1px solid black;
 }
+.detail {
+    display: inline-block;
+}

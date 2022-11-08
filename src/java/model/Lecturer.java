@@ -79,6 +79,11 @@ public class Lecturer {
     public void setAccounts(ArrayList<Account> accounts) {
         this.accounts = accounts;
     }
+
+    @Override
+    public String toString() {
+        return "Lecturer{" + "id=" + id + ", name=" + name + ", dob=" + dob + ", gender=" + gender + ", groups=" + groups + ", accounts=" + accounts + '}';
+    }
     
     
     

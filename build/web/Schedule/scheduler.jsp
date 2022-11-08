@@ -6,15 +6,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="helper" class="util.DateTimeHelper"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="css\bootstrap.css">
-        <link rel="stylesheet" href="css\bootstrap.min.css">
-        <link rel="stylesheet" href="style-scheduler.css" type="text/css">
-        <style><%@include file="style-scheduler.css"%></style>
+        <style type="text/css">
+            <%@include file="../Schedule/style-scheduler.css"%>
+            <%@include file="css/bootstrap.min.css" %>
+        </style>
+
     </head>
 
     <body>
@@ -44,12 +46,12 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <a href="https://fap.fpt.edu.vn/Student.aspx">Home</a>
+                    <a href="../home">Home</a>
                     | <span>View Schedule</span>
                 </div>
                 <div class="col-md-4">
-                    <a href="https://fap.fpt.edu.vn/User/UserDetail.aspx">synthe160686</a> |
-                    <a href="https://fap.fpt.edu.vn/Default.aspx">Logout</a> |
+                    <p>${sessionScope.account.username}</p>
+                    <a href="../logout">Logout</a> |
                     <span>CAMPUS: FPTU-Hòa Lạc</span>
                 </div>
             </div>
@@ -70,8 +72,8 @@
                         <p>Little UK (LUK) thuộc tầng 5 tòa nhà Delta</p>
                     </div>
                 </div>
-                Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
                 <form action="timetable" method="GET">
+                    Lecturer: <input type="text" readonly="readonly" value="${requestScope.lecturer.name}"/>
                     <input type="hidden" name="lid" value="${param.lid}"/>
                     From: <input type="date" name="from" value="${requestScope.from}"/>
                     To: <input type="date" name="to" value="${requestScope.to}"/>

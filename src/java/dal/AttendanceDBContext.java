@@ -97,13 +97,14 @@ public class AttendanceDBContext extends DBContext<Attandance> {
     public void update(Attandance model) {
         try {
             String sql = "update Attendance \n"
-                    + "set [attend] = ?\n"
+                    + "set attend = ? , comment = ?\n"
                     + "where sessionId = ?\n"
                     + "and studentId = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setBoolean(1, model.isPresent());
-            stm.setInt(2, model.getSession().getId());
-            stm.setInt(3, model.getStudent().getId());
+            stm.setString(2, model.getDescription());
+            stm.setInt(3, model.getSession().getId());
+            stm.setInt(4, model.getStudent().getId());
             stm.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(StudentDBContext.class.getName()).log(Level.SEVERE, null, ex);

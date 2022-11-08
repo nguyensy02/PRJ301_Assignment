@@ -7,6 +7,7 @@ package lecturer;
 import controller.auth.BaseRoleController;
 import dal.AttendanceDBContext;
 import dal.GroupDBContext;
+import dal.SessionDBContext;
 import dal.StudentDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -90,7 +91,6 @@ public class ChangeAttendController extends BaseRoleController {
             int sid = attandances.get(i).getStudent().getId();
             Student s = new Student();
             s.setId(sid);
-            resp.getWriter().println(sid);
 
             Session ses = new Session();
             ses.setId(sesId);
@@ -99,13 +99,14 @@ public class ChangeAttendController extends BaseRoleController {
             boolean present;
             present = valuePresent.equals("present");
 
-            resp.getWriter().println(present);
-
+            String description = req.getParameter("des"+sid);
+            
             Attandance a = new Attandance();
             a.setStudent(s);
             a.setSession(ses);
             a.setPresent(present);
-
+            a.setDescription(description);
+                    
             attDB.update(a);
         }
         resp.getWriter().println("OK");
@@ -117,6 +118,10 @@ public class ChangeAttendController extends BaseRoleController {
         int sesId = Integer.parseInt(req.getParameter("id"));
         req.setAttribute("sesid", sesId);
 
+        SessionDBContext sesDB = new SessionDBContext();
+        Session session = sesDB.get(sesId);
+        req.setAttribute("session", session);
+        
         AttendanceDBContext attDB = new AttendanceDBContext();
         ArrayList<Attandance> attandances = attDB.filter(sesId);
         req.setAttribute("attandances", attandances);

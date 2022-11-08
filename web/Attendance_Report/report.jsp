@@ -7,6 +7,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="helper" class="util.DateTimeHelper"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,10 +16,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="css\bootstrap.css">
-        <link rel="stylesheet" href="css\bootstrap.min.css">
-        <link rel="stylesheet" href="style-scheduler.css">
-        <link rel="stylesheet" href="style_attendance_report.css">
+        <style><%@include file="style_attendance_report.css"%></style>
+        <style><%@include file="css/bootstrap.min.css"%></style>
+
+
     </head>
     <body>
         <div class="container">
@@ -33,12 +35,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <a href="https://apps.apple.com/app/id1527723314"><img src="Image\app-store.svg"
+                                <a href="https://apps.apple.com/app/id1527723314"><img src="..\Attendance_Report\Image\app-store.svg"
                                                                                        alt="apple store" style="height: 50px; width: auto"></a>
                             </td>
                             <td>
                                 <a href="https://play.google.com/store/apps/details?id=com.fuct"><img
-                                        src="Image\play-store.svg" alt="play store" style="height: 50px; width: auto"></a>
+                                        src="..\Attendance_Report\Image\play-store.svg" alt="play store" style="height: 50px; width: auto"></a>
                             </td>
                         </tr>
                     </table>
@@ -46,12 +48,12 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <a href="https://fap.fpt.edu.vn/Student.aspx">Home</a>
-                    | <span>View Schedule</span>
+                    <a href="../home">Home</a>
+                    <a href="timetable?lid=${sessionScope.lecturer.id}">View Schedule</a>
                 </div>
                 <div class="col-md-4">
-                    <a href="https://fap.fpt.edu.vn/User/UserDetail.aspx">${requestScope.lecturer.name}</a> |
-                    <a href="https://fap.fpt.edu.vn/Default.aspx">Logout</a> |
+                    <p>${requestScope.lecturer.name}</p>
+                    <a href="../logout">Logout</a> |
                     <span>CAMPUS: FPTU-Hòa Lạc</span>
                 </div>
                 <table></table>
@@ -67,13 +69,12 @@
                 <input type="submit" value="Save"/>
             </form>
 
-            <table>
+            <table class="report">
                 <thead>
                     <tr>
                         <th rowspan="2">ID</th>
                         <th rowspan="2">Name</th>
-                        <th colspan="5" style="text-align: center;">Slot</th>
-                        <th rowspan="2">Total</th>
+                        <th colspan="${requestScope.numSes}" style="text-align: center;">Slot</th>
                     </tr>
                     <tr>
                         <c:forEach items="${requestScope.sessions}" var="ses">
@@ -104,6 +105,22 @@
                     </c:forEach>
                 </tbody>
             </table>
+                    
+            <table class="total">
+                <thead>
+                    <tr>
+                        <td rowspan="2">Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${requestScope.totals}" var="total">
+                        <tr>
+                            <td>${total}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+
             <div class="row" style="text-align: center;">
                 <div class="col-md-12">
                     <b> Mọi góp ý, thắc mắc xin liên hệ:</b>Phòng dịch vụ sinh viên: Email: dichvusinhvien@fe.edu.vn. Điện

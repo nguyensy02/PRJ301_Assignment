@@ -4,3 +4,29 @@
 .report tr td {
     border: solid black 1px;
 }
+.total tr th {
+    border: solid black 1px;
+}
+.total tr td {
+    border: solid black 1px;
+}
+
+.report {
+    display: inline-block;
+    width: 90%;
+    height: auto;
+}
+.total {
+    display: inline-table;
+    width: 10%;
+    height: auto;
+}
+
+table thead {
+    width: 100%;
+    height: auto;
+}
+table tbody {
+    width: 100%;
+    height: auto;
+}

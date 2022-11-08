@@ -126,7 +126,18 @@ public class SessionDBContext extends dal.DBContext<Session> {
 
     @Override
     public Session get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Session s = new Session();
+        try {
+            String sql = "select  [index] from [Session] where id = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                s.setIndex(rs.getInt("index"));
+            }
+        } catch (Exception e) {
+        }
+        return s;
     }
 
     @Override
